@@ -107,6 +107,7 @@ class SharepointStorage(BaseStorage):
             "site_url": site_url,
             "use_app_auth": use_app_auth,
             "root_dir": setting("SHAREPOINT_ROOT_DIR"),
+            "max_memory_size": setting("SHAREPOINT_BLOB_MAX_MEMORY_SIZE", 16*1024*1024),
         }
 
     def __get_sharepoint_context_using_app(self):
