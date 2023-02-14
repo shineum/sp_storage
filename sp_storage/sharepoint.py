@@ -47,9 +47,12 @@ class SharepointStorageFile(File):
             suffix=".SharepointStorageFile",
             dir=setting("FILE_UPLOAD_TEMP_DIR", None))
 
-        sp_file_path = self._storage.get_sp_file_path(self.name)
-        sp_file = self._storage.service_context.web.get_file_by_server_relative_url(sp_file_path)
-        sp_file.download(file).execute_query()
+        if self._storage.exists(self.name):
+            sp_file_path = self._storage.get_sp_file_path(self.name)
+            sp_file = self._storage.service_context.web.get_file_by_server_relative_url(sp_file_path)
+            sp_file.download(file).execute_query()
+        if 'r' in self._mode:
+            file.seek(0)
 
         self._file = file
         return self._file
