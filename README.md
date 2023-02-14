@@ -3,6 +3,11 @@
 Use pip:
 
 ```
+pip install sp_storage
+```
+or
+
+```
 pip install git+https://github.com/shineum/sp_storage.git
 ```
 
