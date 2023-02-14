@@ -1,0 +1,24 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sp_storage"
+version = "0.0.1"
+description = "Storage provider for sharepoint service"
+readme = "README.md"
+authors = [{ name = "Sungwon Um", email = "shineum@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["storage", "sharepoint"]
+dependencies = [
+    "Office365-REST-Python-Client >= 2.3.10",
+]
+requires-python = ">=3.6"
+
+[project.urls]
+Homepage = "https://github.com/shineum/sp_storage"
